@@ -1,0 +1,126 @@
+# ft_snake
+
+Recrée le célèbre jeu Snake en C.
+
+## Le jeu
+
+Le joueur contrôle un serpent qui se déplace sur une grille.
+
+Le but est de manger un maximum de pommes sans heurter un mur ou son propre corps.
+
+À chaque pomme mangée, le serpent grandit.
+
+## Règles
+
+- Le serpent commence avec une longueur de 3 cases.
+- Une pomme apparaît aléatoirement sur une case libre.
+- Chaque pomme mangée augmente la longueur du serpent de 1.
+- Le score augmente de 1 à chaque pomme.
+- Le joueur contrôle le serpent avec les touches :
+  - `W` : Haut
+  - `A` : Gauche
+  - `S` : Bas
+  - `D` : Droite
+- Le serpent continue d'avancer jusqu'à la fin de la partie.
+- La partie se termine si :
+  - le serpent touche un mur ;
+  - le serpent touche son propre corps.
+- À la fin de la partie, afficher le score obtenu et proposer de rejouer (`o`/`n`).
+
+## Contraintes
+
+- Projet réalisé en équipe de 4.
+- Langage C.
+- Pas de variables globales (hors constantes si nécessaire).
+- Le programme ne doit jamais crash.
+- Le code doit être découpé en plusieurs fichiers.
+- Chaque fonction doit avoir une responsabilité claire.
+- Makefile avec `$(NAME)`, `all`, `clean`, `fclean` et `re`.
+
+## Organisation conseillée
+
+```
+src/
+    main.c
+    game.c
+    snake.c
+    apple.c
+    input.c
+    render.c
+    collision.c
+    utils.c
+
+include/
+    snake.h
+
+assets/
+
+Makefile
+README.md
+```
+
+## Exemple
+
+```
+####################
+#                  #
+#        @         #
+#                  #
+#      OOO>        #
+#                  #
+####################
+
+Score : 1
+```
+
+Le joueur appuie sur `D`.
+
+```
+####################
+#                  #
+#        @         #
+#                  #
+#       OOO>       #
+#                  #
+####################
+```
+
+Le serpent mange la pomme.
+
+```
+####################
+#                  #
+#             @    #
+#                  #
+#      OOOO>       #
+#                  #
+####################
+
+Score : 2
+```
+
+Le serpent touche un mur.
+
+```
+Game Over !
+
+Score final : 12
+
+Rejouer ? (o/n)
+```
+
+BONUS :
+
+- Plusieurs niveaux de difficulté (vitesse).
+- Pause (`P`).
+- Meilleur score pendant la session.
+- Portails (le serpent ressort de l'autre côté de la carte).
+- Obstacles.
+- Mode 2 joueurs.
+- Menu principal.
+- Génération aléatoire de la carte.
+- Effets sonores.
+- Sauvegarde du meilleur score.
+- Animation de démarrage.
+- Affichage du nombre de pommes mangées.
+- Différents thèmes graphiques.
